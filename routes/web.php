@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UmurController;
+use App\Http\Middleware\AgeMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -71,4 +72,4 @@ Route::get('/report-barang', [BarangController::class, 'reportBarang'])->name('b
 
 Route::get('form-umur', [UmurController::class, 'form'])->name('form.umur'); //menampilkan halaman form
 Route::post('proses-umur', [UmurController::class, 'proses'])->name('proses.umur'); //proses data input
-Route::get('sukses', [UmurController::class, 'sukses'])->name('sukses.umur'); //kmenampilkan halaman sukses
+Route::middleware(AgeMiddleware::class)->get('sukses', [UmurController::class, 'sukses'])->name('sukses.umur'); //kmenampilkan halaman sukses
