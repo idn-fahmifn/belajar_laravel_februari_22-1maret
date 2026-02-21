@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PageController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,6 +25,14 @@ Route::prefix('user')->group(function () {
 
 });
 
+/**
+ * name wajib di deklarasikan di method : 
+ * get
+ * post
+ * put/patch
+ * delete
+ */
+
 
 // Route::post('profile', function () {
 //     return "hallo";
@@ -42,3 +53,17 @@ Route::get('location/{param?}', function ($parameter = 'belum didefiniskan') {
     return view('halaman', compact('lokasi'));
 
 })->name('lokasi');
+
+Route::post('send-location', function(Request $request){
+
+// tampilkan request pada respon : 
+// dd($request);
+
+return $request;
+
+})->name('send.location');
+
+Route::get('first-page', [PageController::class, 'firstPage'])->name('first');
+Route::get('second-page', [PageController::class, 'secondPage'])->name('second');
+
+Route::get('/report-barang', [BarangController::class, 'reportBarang'])->name('barang.report');
