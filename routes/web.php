@@ -42,11 +42,11 @@ Route::prefix('user')->group(function () {
 
 
 // Route Parameter 
-Route::get('barang/{param}', function ($parameter) {
+// Route::get('barang/{param}', function ($parameter) {
 
-    return "ini adalah detail barang " . $parameter;
+//     return "ini adalah detail barang " . $parameter;
 
-});
+// });
 
 // optional parameter
 Route::get('location/{param?}', function ($parameter = 'belum didefiniskan') {

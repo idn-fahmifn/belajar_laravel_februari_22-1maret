@@ -33,7 +33,7 @@
                                 <td>IDR. {{ number_format($row->harga) }}</td>
                                 <td>{{ $row->kedaluarsa }}</td>
                                 <td>
-                                    <a href="" class="btn btn-info btn-small">
+                                    <a href="{{ route('barang.show', $row->merk) }}" class="btn btn-info btn-small">
                                         detail
                                     </a>
                                 </td>
