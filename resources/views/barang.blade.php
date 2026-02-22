@@ -32,6 +32,11 @@
                                 <td>{{ $row->nama_barang }}</td>
                                 <td>IDR. {{ number_format($row->harga) }}</td>
                                 <td>{{ $row->kedaluarsa }}</td>
+                                <td>
+                                    <a href="" class="btn btn-info btn-small">
+                                        detail
+                                    </a>
+                                </td>
                             </tr>
                                 
                             @empty
