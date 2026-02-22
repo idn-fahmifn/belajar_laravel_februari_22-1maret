@@ -14,7 +14,7 @@ class PageController extends Controller
 
     public function secondPage()
     {
-        return "Hallo ini adalah halaman kedua saya";
+        return response()->json();
 
     }
 

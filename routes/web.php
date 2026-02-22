@@ -72,4 +72,6 @@ Route::get('/report-barang', [BarangController::class, 'reportBarang'])->name('b
 
 Route::get('form-umur', [UmurController::class, 'form'])->name('form.umur'); //menampilkan halaman form
 Route::post('proses-umur', [UmurController::class, 'proses'])->name('proses.umur'); //proses data input
-Route::middleware(AgeMiddleware::class)->get('sukses', [UmurController::class, 'sukses'])->name('sukses.umur'); //kmenampilkan halaman sukses
+Route::middleware('umur')->get('sukses', [UmurController::class, 'sukses'])->name('sukses.umur'); //kmenampilkan halaman sukses
+
+Route::resource('barang', BarangController::class);

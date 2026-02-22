@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -11,7 +12,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return "ini halaman barang dari resource controller";
+        $data = Barang::paginate(10); //menampilkan semua data pada table
+        return view('barang', compact('data'));
     }
 
     /**
